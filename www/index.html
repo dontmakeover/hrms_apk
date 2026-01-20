@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta name="theme-color" content="#2B7FFF">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <title>Talent Factor HRMS</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div id="app">
+        <!-- Onboarding Screen 1: Welcome -->
+        <div class="screen onboarding-screen active" id="onboarding-1">
+            <div class="onboarding-header">
+                <button class="skip-btn" id="skip-btn-1">Skip</button>
+            </div>
+            <div class="onboarding-content">
+                <div class="illustration-container">
+                    <div class="illustration welcome-illustration">
+                        <svg viewBox="0 0 300 220" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <!-- Office desk scene -->
+                            <rect x="80" y="50" width="140" height="100" rx="8" fill="#F1F5F9" />
+                            <rect x="95" y="65" width="110" height="70" rx="4" fill="#E2E8F0" />
+                            <!-- Whiteboard -->
+                            <rect x="110" y="30" width="80" height="50" rx="4" fill="white" stroke="#E2E8F0"
+                                stroke-width="2" />
+                            <rect x="130" y="45" width="40" height="5" rx="2" fill="#2B7FFF" />
+                            <rect x="125" y="55" width="50" height="3" rx="1" fill="#CBD5E1" />
+                            <rect x="125" y="62" width="35" height="3" rx="1" fill="#CBD5E1" />
+                            <!-- Person 1 -->
+                            <circle cx="120" cy="115" r="12" fill="#94D3AC" />
+                            <path d="M105 165 Q120 140 135 165" fill="#5B9BD5" />
+                            <!-- Person 2 -->
+                            <circle cx="180" cy="115" r="12" fill="#FFB347" />
+                            <path d="M165 165 Q180 140 195 165" fill="#F4A460" />
+                            <!-- Plants -->
+                            <ellipse cx="60" cy="170" rx="20" ry="30" fill="#10B981" />
+                            <rect x="55" y="200" width="10" height="15" rx="2" fill="#D97706" />
+                            <ellipse cx="240" cy="175" rx="15" ry="25" fill="#10B981" />
+                            <rect x="235" y="200" width="10" height="15" rx="2" fill="#D97706" />
+                        </svg>
+                    </div>
+                </div>
+                <h1 class="onboarding-title">Welcome to Talent Factor HRMS</h1>
+                <p class="onboarding-description">Your all-in-one platform for attendance, leaves, and team
+                    collaboration.</p>
+            </div>
+            <div class="onboarding-footer">
+                <div class="pagination-dots">
+                    <span class="dot active"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                </div>
+                <button class="primary-btn" id="next-btn-1">Next <span class="arrow">→</span></button>
+            </div>
+        </div>
+
+        <!-- Onboarding Screen 2: Attendance -->
+        <div class="screen onboarding-screen" id="onboarding-2">
+            <div class="phone-frame">
+                <div class="onboarding-header">
+                    <button class="skip-btn" id="skip-btn-2">Skip</button>
+                </div>
+                <div class="onboarding-content">
+                    <div class="illustration-container with-circle">
+                        <div class="bg-circle"></div>
+                        <div class="clock-card">
+                            <div class="card-header">
+                                <div class="header-bars">
+                                    <span class="bar"></span>
+                                    <span class="bar short"></span>
+                                </div>
+                                <div class="calendar-icon">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <rect x="3" y="4" width="18" height="18" rx="2" stroke="#2B7FFF"
+                                            stroke-width="2" />
+                                        <path d="M3 10H21" stroke="#2B7FFF" stroke-width="2" />
+                                        <path d="M8 2V6" stroke="#2B7FFF" stroke-width="2" stroke-linecap="round" />
+                                        <path d="M16 2V6" stroke="#2B7FFF" stroke-width="2" stroke-linecap="round" />
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="week-dots">
+                                <span class="week-dot"></span>
+                                <span class="week-dot"></span>
+                                <span class="week-dot active"></span>
+                                <span class="week-dot"></span>
+                                <span class="week-dot"></span>
+                            </div>
+                            <div class="time-display">
+                                <span class="time">09:00</span>
+                                <span class="label">CLOCK IN</span>
+                            </div>
+                            <div class="clock-btn-placeholder"></div>
+                        </div>
+                    </div>
+                    <h1 class="onboarding-title">Track Time & Attendance</h1>
+                    <p class="onboarding-description">Clock in with ease and manage your work hours directly from your
+                        phone.</p>
+                </div>
+                <div class="onboarding-footer">
+                    <div class="pagination-dots">
+                        <span class="dot"></span>
+                        <span class="dot active"></span>
+                        <span class="dot"></span>
+                    </div>
+                    <button class="primary-btn" id="next-btn-2">Next <span class="arrow">→</span></button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Onboarding Screen 3: Requests -->
+        <div class="screen onboarding-screen" id="onboarding-3">
+            <div class="onboarding-header with-logo">
+                <span class="header-logo">Talent Factor</span>
+                <button class="menu-btn">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <circle cx="5" cy="12" r="2" fill="#6B7280" />
+                        <circle cx="12" cy="12" r="2" fill="#6B7280" />
+                        <circle cx="19" cy="12" r="2" fill="#6B7280" />
+                    </svg>
+                </button>
+            </div>
+            <div class="onboarding-content">
+                <div class="illustration-container">
+                    <div class="request-card">
+                        <div class="request-icon-wrapper">
+                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="12" cy="12" r="10" stroke="#2B7FFF" stroke-width="2" fill="#E8F4FF" />
+                                <path d="M8 12L11 15L16 9" stroke="#2B7FFF" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                        </div>
+                        <div class="clipboard-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                <rect x="5" y="3" width="14" height="18" rx="2" stroke="#2B7FFF" stroke-width="2" />
+                                <path d="M9 7H15" stroke="#2B7FFF" stroke-width="2" stroke-linecap="round" />
+                                <rect x="9" y="3" width="6" height="4" rx="1" fill="#2B7FFF" />
+                            </svg>
+                        </div>
+                        <div class="request-lines">
+                            <span class="line long"></span>
+                            <span class="line medium"></span>
+                            <span class="line short"></span>
+                        </div>
+                        <div class="team-icon">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+                                <circle cx="9" cy="8" r="4" fill="#10B981" />
+                                <circle cx="15" cy="8" r="4" fill="#10B981" />
+                                <path d="M3 20C3 16 6 14 9 14" stroke="#10B981" stroke-width="2" />
+                                <path d="M21 20C21 16 18 14 15 14" stroke="#10B981" stroke-width="2" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <h1 class="onboarding-title">Simplified Requests</h1>
+                <p class="onboarding-description">Apply for leaves and track approvals instantly. Connect with your team
+                    anywhere.</p>
+            </div>
+            <div class="onboarding-footer">
+                <div class="pagination-dots">
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot active"></span>
+                </div>
+                <button class="primary-btn" id="get-started-btn">Get Started <span class="arrow">→</span></button>
+            </div>
+        </div>
+
+        <!-- Login Screen -->
+        <div class="screen auth-screen" id="login-screen">
+            <div class="auth-content">
+                <div class="logo">
+                    <span class="logo-tf">TF</span>
+                    <div class="logo-text">
+                        <span class="talent">TALENT<sup>+</sup></span>
+                        <span class="factor">F A C T O R</span>
+                    </div>
+                </div>
+                <h1 class="auth-title">Login to your account</h1>
+                <p class="auth-subtitle">Enter your Email, Phone Number, or Employee ID to access your portal.</p>
+
+                <form id="login-form" class="auth-form">
+                    <div class="input-group">
+                        <input type="text" id="login-email" placeholder="User Name or Email" required>
+                    </div>
+                    <div class="input-group password-group">
+                        <input type="password" id="login-password" placeholder="Password" required>
+                        <button type="button" class="toggle-password" aria-label="Toggle password visibility">
+                            <svg class="eye-icon" width="22" height="22" viewBox="0 0 24 24" fill="none">
+                                <path d="M1 12C1 12 5 4 12 4C19 4 23 12 23 12C23 12 19 20 12 20C5 20 1 12 1 12Z"
+                                    stroke="#9CA3AF" stroke-width="2" />
+                                <circle cx="12" cy="12" r="3" stroke="#9CA3AF" stroke-width="2" />
+                            </svg>
+                            <svg class="eye-off-icon hidden" width="22" height="22" viewBox="0 0 24 24" fill="none">
+                                <path d="M1 12C1 12 5 4 12 4C19 4 23 12 23 12" stroke="#9CA3AF" stroke-width="2" />
+                                <path d="M1 1L23 23" stroke="#9CA3AF" stroke-width="2" />
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="form-options">
+                        <label class="checkbox-container">
+                            <input type="checkbox" id="remember-me">
+                            <span class="checkmark"></span>
+                            Remember Me
+                        </label>
+                        <a href="#" class="forgot-link" id="forgot-password-link">Forgot Password?</a>
+                    </div>
+                    <button type="submit" class="primary-btn auth-btn">Login</button>
+                </form>
+
+                <div class="divider">
+                    <span>OR</span>
+                </div>
+
+                <div class="social-login">
+                    <button class="social-btn google-btn" type="button">
+                        <svg width="20" height="20" viewBox="0 0 24 24">
+                            <path
+                                d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
+                                fill="#4285F4" />
+                            <path
+                                d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"
+                                fill="#34A853" />
+                            <path
+                                d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"
+                                fill="#FBBC05" />
+                            <path
+                                d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"
+                                fill="#EA4335" />
+                        </svg>
+                    </button>
+                    <button class="social-btn apple-btn" type="button">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="#000">
+                            <path
+                                d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z" />
+                        </svg>
+                    </button>
+                </div>
+
+                <p class="auth-footer-text">
+                    Don't have an account? <a href="#" class="link" id="contact-support-link">Contact Support</a>
+                </p>
+            </div>
+        </div>
+
+        <!-- Signup Screen -->
+        <div class="screen auth-screen" id="signup-screen">
+            <div class="auth-content">
+                <div class="logo">
+                    <span class="logo-tf">TF</span>
+                    <div class="logo-text">
+                        <span class="talent">TALENT<sup>+</sup></span>
+                        <span class="factor">F A C T O R</span>
+                    </div>
+                </div>
+                <h1 class="auth-title">Create your account</h1>
+                <p class="auth-subtitle">Join Talent Factor to manage your attendance, tasks, and leaves seamlessly.</p>
+
+                <form id="signup-form" class="auth-form">
+                    <div class="input-group">
+                        <input type="text" id="signup-name" placeholder="Full Name" required>
+                    </div>
+                    <div class="input-group">
+                        <input type="email" id="signup-email" placeholder="Work Email" required>
+                    </div>
+                    <div class="input-group">
+                        <input type="text" id="signup-employee-id" placeholder="Employee ID (Optional)">
+                    </div>
+                    <div class="input-group password-group">
+                        <input type="password" id="signup-password" placeholder="Password" required>
+                        <button type="button" class="toggle-password" aria-label="Toggle password visibility">
+                            <svg class="eye-icon" width="22" height="22" viewBox="0 0 24 24" fill="none">
+                                <path d="M1 12C1 12 5 4 12 4C19 4 23 12 23 12C23 12 19 20 12 20C5 20 1 12 1 12Z"
+                                    stroke="#9CA3AF" stroke-width="2" />
+                                <circle cx="12" cy="12" r="3" stroke="#9CA3AF" stroke-width="2" />
+                            </svg>
+                            <svg class="eye-off-icon hidden" width="22" height="22" viewBox="0 0 24 24" fill="none">
+                                <path d="M1 12C1 12 5 4 12 4C19 4 23 12 23 12" stroke="#9CA3AF" stroke-width="2" />
+                                <path d="M1 1L23 23" stroke="#9CA3AF" stroke-width="2" />
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="terms-checkbox-wrapper">
+                        <label class="checkbox-container terms-checkbox">
+                            <input type="checkbox" id="terms-checkbox">
+                            <span class="checkmark"></span>
+                        </label>
+                        <span class="terms-text-content">I agree to the <a href="#" class="link" id="terms-link">Terms
+                                and Conditions</a> and <a href="#" class="link" id="privacy-link">Privacy
+                                Policy</a></span>
+                    </div>
+                    <button type="submit" class="primary-btn auth-btn">Sign Up</button>
+                </form>
+
+                <div class="divider">
+                    <span>OR</span>
+                </div>
+
+                <div class="social-login">
+                    <button class="social-btn google-btn" type="button">
+                        <svg width="20" height="20" viewBox="0 0 24 24">
+                            <path
+                                d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
+                                fill="#4285F4" />
+                            <path
+                                d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"
+                                fill="#34A853" />
+                            <path
+                                d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"
+                                fill="#FBBC05" />
+                            <path
+                                d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"
+                                fill="#EA4335" />
+                        </svg>
+                    </button>
+                    <button class="social-btn apple-btn" type="button">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="#000">
+                            <path
+                                d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z" />
+                        </svg>
+                    </button>
+                </div>
+
+                <p class="auth-footer-text">
+                    Already have an account? <a href="#" class="link" id="login-link">Login</a>
+                </p>
+            </div>
+        </div>
+
+        <!-- Forgot Password Screen -->
+        <div class="screen auth-screen" id="forgot-password-screen">
+            <div class="auth-content">
+                <div class="logo">
+                    <span class="logo-tf">TF</span>
+                    <div class="logo-text">
+                        <span class="talent">TALENT<sup>+</sup></span>
+                        <span class="factor">F A C T O R</span>
+                    </div>
+                </div>
+                <h1 class="auth-title">Reset Password</h1>
+                <p class="auth-subtitle">Enter your email address and we'll send you a link to reset your password.</p>
+
+                <form id="forgot-password-form" class="auth-form">
+                    <div class="input-group">
+                        <input type="email" id="reset-email" placeholder="Work Email" required>
+                    </div>
+                    <button type="submit" class="primary-btn auth-btn">Send Reset Link</button>
+                </form>
+
+                <p class="auth-footer-text" style="margin-top: 24px;">
+                    <a href="#" class="link" id="back-to-login-link">← Back to Login</a>
+                </p>
+
+                <p class="auth-footer-text">
+                    Need help? <a href="#" class="link">Contact Support</a>
+                </p>
+            </div>
+        </div>
+
+        <!-- Organization Setup Step 1: Organization Details -->
+        <div class="screen org-setup-screen" id="org-setup-1">
+            <div class="org-setup-header">
+                <button class="back-btn" id="org-setup-1-back">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M19 12H5M5 12L12 19M5 12L12 5" stroke="#1F2937" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                    </svg>
+                </button>
+                <span class="step-text">STEP 1 OF 3</span>
+            </div>
+            <div class="progress-bar">
+                <div class="progress-segment active"></div>
+                <div class="progress-segment"></div>
+                <div class="progress-segment"></div>
+            </div>
+            <div class="org-setup-content">
+                <h1 class="org-setup-title">Organization Details</h1>
+                <p class="org-setup-subtitle">Tell us about your organization. This information will be used to set up
+                    your workspace and branding.</p>
+
+                <form id="org-details-form" class="org-setup-form">
+                    <div class="form-field">
+                        <label class="field-label">Organization Name</label>
+                        <div class="input-wrapper">
+                            <input type="text" id="org-name" placeholder="e.g., Acme Corporation" required>
+                            <span class="input-check hidden">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                                    <circle cx="12" cy="12" r="10" fill="#2B7FFF" />
+                                    <path d="M8 12L11 15L16 9" stroke="white" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                </svg>
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="form-field">
+                        <label class="field-label">Organization Mobile Number</label>
+                        <div class="phone-input-group">
+                            <div class="country-code-select" id="country-code-btn">
+                                <span id="selected-code">+1</span>
+                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none">
+                                    <path d="M6 9L12 15L18 9" stroke="#6B7280" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                </svg>
+                                <div class="country-dropdown hidden" id="country-dropdown">
+                                    <div class="country-option" data-code="+1">+1 (US)</div>
+                                    <div class="country-option" data-code="+44">+44 (UK)</div>
+                                    <div class="country-option" data-code="+91">+91 (IN)</div>
+                                    <div class="country-option" data-code="+61">+61 (AU)</div>
+                                    <div class="country-option" data-code="+81">+81 (JP)</div>
+                                    <div class="country-option" data-code="+86">+86 (CN)</div>
+                                </div>
+                            </div>
+                            <input type="tel" id="org-phone" placeholder="(555) 000-0000" required>
+                        </div>
+                    </div>
+
+                    <div class="form-field">
+                        <label class="field-label">Organization Logo (Optional)</label>
+                        <div class="logo-upload-area" id="logo-upload">
+                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none">
+                                <rect x="3" y="3" width="18" height="18" rx="2" stroke="#CBD5E1" stroke-width="2"
+                                    stroke-dasharray="4 2" />
+                                <path d="M12 8V16M8 12H16" stroke="#CBD5E1" stroke-width="2" stroke-linecap="round" />
+                            </svg>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="org-setup-footer">
+                <button class="primary-btn" id="org-step-1-next">Next <span class="arrow">→</span></button>
+            </div>
+        </div>
+
+        <!-- Organization Setup Step 2: Admin Setup -->
+        <div class="screen org-setup-screen" id="org-setup-2">
+            <div class="org-setup-header">
+                <button class="back-btn" id="org-setup-2-back">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M19 12H5M5 12L12 19M5 12L12 5" stroke="#1F2937" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                    </svg>
+                </button>
+                <span class="header-title">Admin Setup</span>
+            </div>
+            <div class="step-indicator-row">
+                <span class="step-label">STEP 2 OF 3</span>
+                <span class="step-percent">66% Complete</span>
+            </div>
+            <div class="progress-bar">
+                <div class="progress-segment active"></div>
+                <div class="progress-segment active"></div>
+                <div class="progress-segment"></div>
+            </div>
+            <div class="org-setup-content">
+                <div class="city-illustration">
+                    <svg viewBox="0 0 300 140" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Sky gradient background -->
+                        <defs>
+                            <linearGradient id="skyGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                                <stop offset="0%" style="stop-color:#E8F4FF;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#F8FBFF;stop-opacity:1" />
+                            </linearGradient>
+                        </defs>
+                        <rect width="300" height="140" fill="url(#skyGradient)" />
+                        <!-- Buildings -->
+                        <rect x="30" y="50" width="40" height="90" fill="#E2E8F0" />
+                        <rect x="35" y="55" width="8" height="8" fill="#CBD5E1" />
+                        <rect x="47" y="55" width="8" height="8" fill="#CBD5E1" />
+                        <rect x="59" y="55" width="8" height="8" fill="#CBD5E1" />
+                        <rect x="35" y="68" width="8" height="8" fill="#CBD5E1" />
+                        <rect x="47" y="68" width="8" height="8" fill="#CBD5E1" />
+                        <rect x="59" y="68" width="8" height="8" fill="#CBD5E1" />
+
+                        <rect x="80" y="30" width="50" height="110" fill="#D1D5DB" />
+                        <rect x="85" y="36" width="10" height="10" fill="#9CA3AF" />
+                        <rect x="100" y="36" width="10" height="10" fill="#9CA3AF" />
+                        <rect x="115" y="36" width="10" height="10" fill="#9CA3AF" />
+
+                        <!-- Main building with org icon -->
+                        <rect x="140" y="20" width="60" height="120" fill="#CBD5E1" />
+                        <rect x="155" y="45" width="30" height="30" fill="#2B7FFF" />
+                        <rect x="162" y="52" width="6" height="6" fill="white" />
+                        <rect x="172" y="52" width="6" height="6" fill="white" />
+                        <rect x="162" y="62" width="6" height="6" fill="white" />
+                        <rect x="172" y="62" width="6" height="6" fill="white" />
+
+                        <rect x="210" y="60" width="35" height="80" fill="#E2E8F0" />
+                        <rect x="255" y="80" width="30" height="60" fill="#D1D5DB" />
+
+                        <!-- Trees -->
+                        <ellipse cx="20" cy="125" rx="12" ry="20" fill="#10B981" />
+                        <ellipse cx="280" cy="120" rx="10" ry="18" fill="#10B981" />
+                    </svg>
+                </div>
+
+                <h1 class="org-setup-title">Organization Details</h1>
+                <p class="org-setup-subtitle">Tell us about your organization. This information helps us customize your
+                    workspace for your team.</p>
+
+                <form id="admin-setup-form" class="org-setup-form">
+                    <div class="form-field">
+                        <label class="field-label">Organization Name</label>
+                        <div class="input-wrapper with-icon">
+                            <input type="text" id="admin-org-name" placeholder="e.g., Acme Corporation">
+                            <span class="input-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                                    <rect x="3" y="3" width="18" height="18" rx="2" stroke="#CBD5E1" stroke-width="2" />
+                                    <rect x="7" y="7" width="4" height="4" fill="#CBD5E1" />
+                                    <rect x="13" y="7" width="4" height="4" fill="#CBD5E1" />
+                                    <rect x="7" y="13" width="4" height="4" fill="#CBD5E1" />
+                                    <rect x="13" y="13" width="4" height="4" fill="#CBD5E1" />
+                                </svg>
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="form-field">
+                        <label class="field-label">Organization Mobile Number</label>
+                        <div class="phone-input-group">
+                            <div class="country-code-select" id="country-code-btn-2">
+                                <span id="selected-code-2">+1</span>
+                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none">
+                                    <path d="M6 9L12 15L18 9" stroke="#6B7280" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                </svg>
+                                <div class="country-dropdown hidden" id="country-dropdown-2">
+                                    <div class="country-option" data-code="+1">+1 (US)</div>
+                                    <div class="country-option" data-code="+44">+44 (UK)</div>
+                                    <div class="country-option" data-code="+91">+91 (IN)</div>
+                                    <div class="country-option" data-code="+61">+61 (AU)</div>
+                                </div>
+                            </div>
+                            <input type="tel" id="admin-org-phone" placeholder="(555) 000-0000">
+                            <span class="phone-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                                    <path
+                                        d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"
+                                        stroke="#2B7FFF" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                </svg>
+                            </span>
+                        </div>
+                    </div>
+
+                    <p class="terms-text">By continuing, you agree to our <a href="#" class="link">Terms of Service</a>
+                        and <a href="#" class="link">Privacy Policy</a>.</p>
+                </form>
+            </div>
+            <div class="org-setup-footer">
+                <button class="primary-btn" id="org-step-2-next">Next <span class="arrow">→</span></button>
+            </div>
+        </div>
+
+        <!-- Organization Setup Step 3: Organization Size -->
+        <div class="screen org-setup-screen" id="org-setup-3">
+            <div class="org-setup-header">
+                <button class="back-btn" id="org-setup-3-back">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M19 12H5M5 12L12 19M5 12L12 5" stroke="#1F2937" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                    </svg>
+                </button>
+                <span class="header-title">Organization Setup</span>
+            </div>
+            <div class="progress-dots">
+                <span class="progress-dot active"></span>
+                <span class="progress-dot active"></span>
+                <span class="progress-dot active"></span>
+                <span class="progress-dot"></span>
+            </div>
+            <div class="org-setup-content">
+                <h1 class="org-setup-title size-title">How many employees are in your organization?</h1>
+                <p class="org-setup-subtitle">Choose the range that best describes your company size. This helps us
+                    tailor your HR management experience.</p>
+
+                <div class="size-options" id="size-options">
+                    <label class="size-option-card selected">
+                        <input type="radio" name="org-size" value="1-50" checked>
+                        <div class="size-content">
+                            <span class="size-range">1 - 50</span>
+                            <span class="size-desc">Small business or startup</span>
+                        </div>
+                        <span class="size-radio"></span>
+                    </label>
+
+                    <label class="size-option-card">
+                        <input type="radio" name="org-size" value="51-200">
+                        <div class="size-content">
+                            <span class="size-range">51 - 200</span>
+                            <span class="size-desc">Growing organization</span>
+                        </div>
+                        <span class="size-radio"></span>
+                    </label>
+
+                    <label class="size-option-card">
+                        <input type="radio" name="org-size" value="201-500">
+                        <div class="size-content">
+                            <span class="size-range">201 - 500</span>
+                            <span class="size-desc">Mid-sized enterprise</span>
+                        </div>
+                        <span class="size-radio"></span>
+                    </label>
+
+                    <label class="size-option-card">
+                        <input type="radio" name="org-size" value="500+">
+                        <div class="size-content">
+                            <span class="size-range">500+</span>
+                            <span class="size-desc">Large corporation</span>
+                        </div>
+                        <span class="size-radio"></span>
+                    </label>
+                </div>
+            </div>
+            <div class="org-setup-footer">
+                <button class="primary-btn" id="org-step-3-next">Next Step <span class="arrow">→</span></button>
+                <button class="skip-btn-link" id="org-skip-btn">Skip for now</button>
+            </div>
+        </div>
+
+        <!-- Home Screen (Placeholder for successful login) -->
+        <div class="screen" id="home-screen">
+            <div class="home-content">
+                <div class="success-animation">
+                    <svg width="80" height="80" viewBox="0 0 24 24" fill="none">
+                        <circle cx="12" cy="12" r="10" fill="#10B981" />
+                        <path d="M8 12L11 15L16 9" stroke="white" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                    </svg>
+                </div>
+                <h1 class="auth-title">Welcome!</h1>
+                <p class="auth-subtitle">You have successfully logged in to Talent Factor HRMS.</p>
+                <button class="primary-btn" id="logout-btn" style="margin-top: 32px;">Logout</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>

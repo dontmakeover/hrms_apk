@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Talent Factor HRMS</string>
+    <string name="title_activity_main">Talent Factor HRMS</string>
+    <string name="package_name">com.talentfactor.hrms</string>
+    <string name="custom_url_scheme">com.talentfactor.hrms</string>
+</resources>
